@@ -19,10 +19,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖  Yoka-Look 
+# 📖  
+## Awesome books
   <a name="about-project"></a>
-A blog website for a fashion company based in paries, 
-in this project we build a blog website for a fashion company and describe everything about the company from main Workers to previous exhibition festivals.
+
+The following application is an application that illustrate the usage of object in javascript
 
 
 
@@ -64,7 +65,8 @@ To run the project click on the HTML document on your local machine or use the l
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-live demo <a href="https://djibrilm.github.io/capstone-project/">link</a> 
+
+Currently the application is not live yet but our teams are working days and night in order to put the project live
 
 
 
