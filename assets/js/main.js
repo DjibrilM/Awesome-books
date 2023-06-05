@@ -15,11 +15,21 @@ const addToList = (title, author) => {
     printElements();
     titleInput.value = null;
     authorInput.value = null;
+    storeToLocalStorage();
+
 }
+
+
+const storeToLocalStorage = () => {
+    const listInJson = JSON.stringify(listOfBooks);
+    localStorage.setItem("books", listInJson)
+}
+
 
 const removeElement = (id) => {
     listOfBooks = listOfBooks.filter((el) => el.id !== id);
     document.getElementById(id).remove();
+    storeToLocalStorage();
 }
 
 const bookElement = (title, author, id) => {
@@ -45,8 +55,17 @@ const printElements = () => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (titleInput.value.trim().length === 0 || authorInput.value.trim().length === 0) {
-        alert("no value provided");
+        alert("No value provided");
         return;
     }
     addToList(titleInput.value, authorInput.value);
 });
+
+
+window.addEventListener("load", () => {
+    const getFromLocalStorage = JSON.parse(localStorage.getItem("books"));
+    if (getFromLocalStorage) {
+        listOfBooks = getFromLocalStorage;
+        printElements();
+    }
+})
