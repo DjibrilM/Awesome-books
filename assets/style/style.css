@@ -15,8 +15,8 @@ section {
   display: flex;
   flex-direction: column;
   border: 3px solid black;
- padding-left: 2px;
- padding-right: 10px;
+  padding-left: 2px;
+  padding-right: 10px;
 }
 
 li {
@@ -27,24 +27,23 @@ li {
   justify-content: space-between;
 }
 
-li:nth-child(even){
+li:nth-child(even) {
   background-color: rgb(216, 216, 216);
 }
 
 #removeButton {
   padding: 5px 10px;
-
 }
 
 #formSection {
   margin-top: 5rem;
 }
 
-form{
+form {
   width: 22rem;
 }
 
-input{
+input {
   height: 2rem;
   width: 100%;
   border: 1px solid black;
