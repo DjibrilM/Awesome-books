@@ -24,7 +24,7 @@ class BookEl {
 class main extends BookEl {
   constructor() {
     super();
-    let listOfBooks = [];
+     this.listOfBooks = [];
   }
 
   storeToLocalStorage = () => {
