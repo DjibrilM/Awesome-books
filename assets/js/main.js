@@ -3,8 +3,16 @@ const authorInput = document.querySelector('.author');
 const form = document.querySelector('form');
 const booksListElement = document.querySelector('.listOfBooks');
 
+class Main {
+  constructor() {
+    this.listOfBooks = [];
+  }
 
-class BookEl {
+  storeToLocalStorage = () => {
+    const listInJson = JSON.stringify(this.listOfBooks);
+    localStorage.setItem('books', listInJson);
+  };
+
   bookElement = (title, author, id) => {
     const element = document.createElement('li');
     element.id = id;
@@ -14,20 +22,6 @@ class BookEl {
         `;
     element.querySelector('button').addEventListener('click', () => this.removeElement(id));
     return element;
-  };
-
-}
-
-
-class main extends BookEl {
-  constructor() {
-    super();
-     this.listOfBooks = [];
-  }
-
-  storeToLocalStorage = () => {
-    const listInJson = JSON.stringify(this.listOfBooks);
-    localStorage.setItem('books', listInJson);
   };
 
   removeElement = (id) => {
@@ -43,7 +37,6 @@ class main extends BookEl {
     });
   };
 
-
   addToList = (title, author) => {
     this.listOfBooks.push({
       title,
@@ -57,7 +50,6 @@ class main extends BookEl {
     this.storeToLocalStorage();
   };
 
-
   formSubmit() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -67,7 +59,6 @@ class main extends BookEl {
       }
       this.addToList(titleInput.value, authorInput.value);
     });
-
   }
 
   loadData() {
@@ -81,7 +72,6 @@ class main extends BookEl {
   }
 }
 
-const mainClass = new main();
+const mainClass = new Main();
 mainClass.formSubmit();
 mainClass.loadData();
-
