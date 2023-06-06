@@ -9,10 +9,8 @@ class BookEl {
     const element = document.createElement('li');
     element.id = id;
     element.innerHTML = `
-            <p>${title}</p>
-            <p>${author}</p>
-            <button>remove</button>
-            <hr>
+            <p>"${title}" by ${author}</p>
+            <button id='removeButton'>remove</button>
         `;
     element.querySelector('button').addEventListener('click', () => this.removeElement(id));
     return element;
