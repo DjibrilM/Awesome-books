@@ -3,65 +3,75 @@ const authorInput = document.querySelector('.author');
 const form = document.querySelector('form');
 const booksListElement = document.querySelector('.listOfBooks');
 
-let listOfBooks = [];
-
-const storeToLocalStorage = () => {
-  const listInJson = JSON.stringify(listOfBooks);
-  localStorage.setItem('books', listInJson);
-};
-
-const removeElement = (id) => {
-  listOfBooks = listOfBooks.filter((el) => el.id !== id);
-  document.getElementById(id).remove();
-  storeToLocalStorage();
-};
-
-const bookElement = (title, author, id) => {
-  const element = document.createElement('li');
-  element.id = id;
-  element.innerHTML = `
-      <p>${title}</p>
-      <p>${author}</p>
-      <button>remove</button>
-      <hr>
-  `;
-  element.querySelector('button').addEventListener('click', () => removeElement(id));
-  return element;
-};
-
-const printElements = () => {
-  booksListElement.innerHTML = '';
-  listOfBooks.forEach((el) => {
-    booksListElement.appendChild(bookElement(el.title, el.author, el.id));
-  });
-};
-
-const addToList = (title, author) => {
-  listOfBooks.push({
-    title,
-    author,
-    id: new Date().toISOString(),
-  });
-
-  printElements();
-  titleInput.value = null;
-  authorInput.value = null;
-  storeToLocalStorage();
-};
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (titleInput.value.trim().length === 0 || authorInput.value.trim().length === 0) {
-    alert('No value provided');
-    return;
+class Main {
+  constructor() {
+    this.listOfBooks = [];
   }
-  addToList(titleInput.value, authorInput.value);
-});
 
-window.addEventListener('load', () => {
-  const getFromLocalStorage = JSON.parse(localStorage.getItem('books'));
-  if (getFromLocalStorage) {
-    listOfBooks = getFromLocalStorage;
-    printElements();
+  storeToLocalStorage = () => {
+    const listInJson = JSON.stringify(this.listOfBooks);
+    localStorage.setItem('books', listInJson);
+  };
+
+  bookElement = (title, author, id) => {
+    const element = document.createElement('li');
+    element.id = id;
+    element.innerHTML = `
+            <p>"${title}" by ${author}</p>
+            <button id='removeButton'>remove</button>
+        `;
+    element.querySelector('button').addEventListener('click', () => this.removeElement(id));
+    return element;
+  };
+
+  removeElement = (id) => {
+    this.listOfBooks = this.listOfBooks.filter((el) => el.id !== id);
+    document.getElementById(id).remove();
+    this.storeToLocalStorage();
+  };
+
+  printElements = () => {
+    booksListElement.innerHTML = '';
+    this.listOfBooks.forEach((el) => {
+      booksListElement.appendChild(this.bookElement(el.title, el.author, el.id));
+    });
+  };
+
+  addToList = (title, author) => {
+    this.listOfBooks.push({
+      title,
+      author,
+      id: new Date().toISOString(),
+    });
+
+    this.printElements();
+    titleInput.value = null;
+    authorInput.value = null;
+    this.storeToLocalStorage();
+  };
+
+  formSubmit() {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (titleInput.value.trim().length === 0 || authorInput.value.trim().length === 0) {
+        alert('No value provided');
+        return;
+      }
+      this.addToList(titleInput.value, authorInput.value);
+    });
   }
-});
+
+  loadData() {
+    window.addEventListener('load', () => {
+      const getFromLocalStorage = JSON.parse(localStorage.getItem('books'));
+      if (getFromLocalStorage) {
+        this.listOfBooks = getFromLocalStorage;
+        this.printElements();
+      }
+    });
+  }
+}
+
+const mainClass = new Main();
+mainClass.formSubmit();
+mainClass.loadData();

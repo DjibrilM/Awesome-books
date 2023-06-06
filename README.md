@@ -101,6 +101,11 @@ run `npm install` for installing all dependencies
 - Twitter: [@djibrilM](https://twitter.com/DjibrilMugisho)
 - LinkedIn: [DjibrilMugisho](https://www.linkedin.com/in/djibril-mugisho-509042241/)
 
+👤 **Author2**
+
+- GitHub: [@AsumVictor](https://github.com/AsumVictor)
+- LinkedIn: [AsumVictor](www.linkedin.com/in/VictorAsumDev)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

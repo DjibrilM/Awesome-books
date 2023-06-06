@@ -2,3 +2,56 @@
   margin: 0;
   padding: 0;
 }
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.listOfBooks {
+  width: 22rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  padding-left: 2px;
+  padding-right: 10px;
+}
+
+li {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 3px 5px 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li:nth-child(even) {
+  background-color: rgb(216, 216, 216);
+}
+
+#removeButton {
+  padding: 5px 10px;
+}
+
+#formSection {
+  margin-top: 5rem;
+}
+
+form {
+  width: 22rem;
+}
+
+input {
+  height: 2rem;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+form button {
+  float: right;
+  margin-top: 5px;
+  padding: 5px 10px;
+}
