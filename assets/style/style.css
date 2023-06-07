@@ -20,10 +20,6 @@ body {
   justify-content: space-between;
   border-radius: 10px;
   align-items: center;
-
-  /* position: sticky;
-  top: 30px;
-  border: 1px solid gray; */
 }
 
 .main-header .logo {
