@@ -154,9 +154,11 @@ body {
 .opened {
   display: block;
 }
+
 .hidden {
   display: none;
 }
+
 .active {
   color: rgba(136, 90, 4, 0.874);
 }
