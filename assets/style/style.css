@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-
 body {
   font-family: 'Roboto', sans-serif;
   background-color: rgba(239, 167, 35, 0.874);
@@ -21,19 +20,17 @@ body {
   justify-content: space-between;
   border-radius: 10px;
   align-items: center;
+
   /* position: sticky;
   top: 30px;
   border: 1px solid gray; */
 }
-
-
 
 .main-header .logo {
   font-size: 20px;
   letter-spacing: 0.1rem;
   font-family: 'Tilt Prism', cursive;
 }
-
 
 .main-header ul {
   display: flex;
@@ -42,8 +39,7 @@ body {
   cursor: pointer;
 }
 
-
-.section-container{
+.section-container {
   max-width: 800px;
   background-color: white;
   min-height: 400px;
@@ -51,7 +47,6 @@ body {
   margin: auto;
   padding: 20px 50px;
 }
-
 
 .books-container ul {
   display: flex;
@@ -75,6 +70,14 @@ body {
   border-radius: 10px;
 }
 
+.submit-btn-container button {
+  padding: 20px 70px;
+  background-color: rgba(239, 167, 35, 0.874);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
 .books-container ul li button {
   padding-inline: 40px;
   border: none;
@@ -87,6 +90,10 @@ body {
   color: white;
 }
 
+.submit-btn-container button:active {
+  background-color: rgba(184, 133, 38, 0.874);
+}
+
 .books-container ul li button:active {
   background-color: rgba(198, 142, 39, 0.874);
 }
@@ -95,61 +102,67 @@ body {
   font-size: 20px;
 }
 
-
-
-/* .logo {
-  font-family: 'Quicksand', sans-serif;
-}
-
-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.listOfBooks {
-  width: 22rem;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  border: 3px solid black;
-  padding-left: 2px;
-  padding-right: 10px;
-}
-
-li {
+.inputs-col {
   width: 100%;
-  background-color: rgb(255, 255, 255);
-  padding: 5px 3px 5px 3px;
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
 }
 
-li:nth-child(even) {
-  background-color: rgb(216, 216, 216);
+.inputs-col > :nth-child(1) {
+  width: 70%;
 }
 
-#removeButton {
-  padding: 5px 10px;
+.inputs-col > :nth-child(2) {
+  width: 30%;
 }
 
-#formSection {
-  margin-top: 5rem;
+.input-container {
+  height: 30px;
 }
 
-form {
-  width: 22rem;
-}
-
-input {
-  height: 2rem;
+.input-container input {
+  height: 100%;
   width: 100%;
-  border: 1px solid black;
-  margin-top: 5px;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.341);
+  padding: 10px;
+  outline: none;
 }
 
-form button {
-  float: right;
-  margin-top: 5px;
-  padding: 5px 10px;
-} */
+.input-container input:focus {
+  border-color: rgba(239, 167, 35, 0.874);
+}
+
+.submit-btn-container {
+  margin-top: 50px;
+}
+
+.contact-section h1 {
+  text-align: center;
+}
+
+.contact-section p {
+  margin: 20px;
+  line-height: 1.7rem;
+}
+
+.contact-section ul {
+  margin: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.opened {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  color: rgba(136, 90, 4, 0.874);
+}

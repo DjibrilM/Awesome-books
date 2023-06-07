@@ -2,6 +2,7 @@ const titleInput = document.querySelector('.title');
 const authorInput = document.querySelector('.author');
 const form = document.querySelector('form');
 const booksListElement = document.querySelector('.listOfBooks');
+const navigationLinks = document.querySelectorAll('.nav-link');
 
 class Main {
   constructor() {
@@ -17,8 +18,15 @@ class Main {
     const element = document.createElement('li');
     element.id = id;
     element.innerHTML = `
-            <p>"${title}" by ${author}</p>
-            <button id='removeButton'>remove</button>
+  
+    <div class="">
+        <p>${title} by ${author}</p>
+    </div>
+    <button>
+        Delete
+        <i class='bx bx-trash'></i>
+    </button>
+
         `;
     element.querySelector('button').addEventListener('click', () => this.removeElement(id));
     return element;
@@ -70,8 +78,24 @@ class Main {
       }
     });
   }
+
+  switchPages = (page) => {
+    const findActivePage = document.querySelector('.opened');
+    findActivePage.classList.remove('opened');
+    findActivePage.classList.add('hidden');
+    const newActivePage = document.querySelector(`.${page}`);
+    newActivePage.classList.remove('hidden');
+    newActivePage.classList.add('opened');
+  }
 }
 
 const mainClass = new Main();
 mainClass.formSubmit();
 mainClass.loadData();
+navigationLinks.forEach((el) => {
+  el.addEventListener('click', () => {
+    document.querySelector('.active').classList.remove('active');
+    el.classList.add('active');
+    mainClass.switchPages(el.id);
+  })
+})
