@@ -97,5 +97,5 @@ navigationLinks.forEach((el) => {
     document.querySelector('.active').classList.remove('active');
     el.classList.add('active');
     mainClass.switchPages(el.id);
-  })
-})
+  });
+});
