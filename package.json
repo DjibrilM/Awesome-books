@@ -6,41 +6,42 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server"
-  },
+  }
+  ,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DjibrilM/Portfolio.git"
-  },
+  }
+  ,
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DjibrilM/Portfolio/issues"
-  },
+
+  }
+  ,
   "homepage": "https://github.com/DjibrilM/Portfolio#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.27.5",
-    "hint": "^7.1.8",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
+    "eslint": "^7.32.0"
+    ,
+    "eslint-config-airbnb-base": "^14.2.1"
+    ,
+    "eslint-plugin-import": "^2.27.5"
+    ,
+    "hint": "^7.1.8"
+    ,
+    "stylelint": "^13.13.1"
+    ,
+    "stylelint-config-standard": "^21.0.0"
+    ,
+    "stylelint-csstree-validator": "^1.9.0"
+    ,
     "stylelint-scss": "^3.21.0"
-  },
+  }
+  ,
   "dependencies": {
     "lite-server": "^2.6.1",
     "luxon": "^3.3.0"
   }
 }
-Error [ERR_REQUIRE_ESM]: require() of ES Module /home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/node-fetch/src/index.js from /home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/@hint/utils-network/dist/src/request-async.js not supported.
-Instead change the require of index.js in /home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/@hint/utils-network/dist/src/request-async.js to a dynamic import() which is available in all CommonJS modules.
-at Object. (/home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/@hint/utils-network/dist/src/request-async.js:4:22)
-at Object. (/home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/@hint/utils-network/dist/src/index.js:24:14)
-at Object. (/home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/hint/dist/src/lib/cli/analyze.js:9:25)
-at /home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/hint/dist/src/lib/cli/actions.js:7:74
-at async /home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/hint/dist/src/lib/cli/actions.js:7:39
-at async Object.execute (/home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/hint/dist/src/lib/cli.js:38:23)
-at async run (/home/runner/work/awesome-books-with-ES6/awesome-books-with-ES6/node_modules/hint/dist/src/bin/hint.js:21:24) {
-code: 'ERR_REQUIRE_ESM
