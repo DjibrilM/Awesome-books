@@ -163,8 +163,7 @@ body {
   color: rgba(136, 90, 4, 0.874);
 }
 
-.time
-{
+.time{
   display: flex;
   justify-content: end;
   padding: 20px 50px;
