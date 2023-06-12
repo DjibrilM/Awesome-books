@@ -1,26 +1,25 @@
+import { BookElement } from "./modules/BookELement.js";
+import { storeToLocalStorage, getFromLocalStorage } from "./modules/LocalStorage.js";
+const timeIndicator = document.querySelector(".timeIndicator");
+import { luxon } from "./modules/luxion.js";
+
+
 const titleInput = document.querySelector('.title');
 const authorInput = document.querySelector('.author');
 const form = document.querySelector('form');
 const booksListElement = document.querySelector('.listOfBooks');
 const navigationLinks = document.querySelectorAll('.nav-link');
-import { BookElement } from "./BookELement";
-
 
 class Main extends BookElement {
   constructor() {
+    super()
     this.listOfBooks = [];
   }
-
-  storeToLocalStorage = () => {
-    const listInJson = JSON.stringify(this.listOfBooks);
-    localStorage.setItem('books', listInJson);
-  };
-
 
   removeElement = (id) => {
     this.listOfBooks = this.listOfBooks.filter((el) => el.id !== id);
     document.getElementById(id).remove();
-    this.storeToLocalStorage();
+    storeToLocalStorage("books", this.listOfBooks);
   };
 
   printElements = () => {
@@ -40,10 +39,10 @@ class Main extends BookElement {
     this.printElements();
     titleInput.value = null;
     authorInput.value = null;
-    this.storeToLocalStorage();
+    storeToLocalStorage("books", this.listOfBooks);
   };
 
-  formSubmit() {
+  formSubmit = () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (titleInput.value.trim().length === 0 || authorInput.value.trim().length === 0) {
@@ -54,11 +53,12 @@ class Main extends BookElement {
     });
   }
 
-  loadData() {
-    window.addEventListener('load', () => {
-      const getFromLocalStorage = JSON.parse(localStorage.getItem('books'));
-      if (getFromLocalStorage) {
-        this.listOfBooks = getFromLocalStorage;
+  loadData = () => {
+    window.addEventListener('load', async () => {
+      const getBooksFromLocalStorage = await getFromLocalStorage("books");
+      console.log(getBooksFromLocalStorage);
+      if (getBooksFromLocalStorage) {
+        this.listOfBooks = getBooksFromLocalStorage;
         this.printElements();
       }
     });
@@ -73,12 +73,26 @@ class Main extends BookElement {
     newActivePage.classList.remove('hidden');
     newActivePage.classList.add('opened');
   }
+  getLocalTime = ()=> {
+    const time = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+    return time;
+  }
+
+
+  getTime = () => {
+    setInterval(() => {
+      timeIndicator.innerHTML = this.getLocalTime();
+    }, 1000);
+
+  }
 
 }
+
 
 const mainClass = new Main();
 mainClass.formSubmit();
 mainClass.loadData();
+mainClass.getTime();
 
 navigationLinks.forEach((el) => {
   el.addEventListener('click', () => {

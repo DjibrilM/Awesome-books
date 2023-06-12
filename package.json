@@ -1,8 +1,9 @@
 {
   "name": "portfolio-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "- [📖 About the Project](#about-project)   - [🛠 Built With](#built-with)     - [Tech Stack](#tech-stack) - [Key Features](#key-features) - [🚀 Live Demo](#live-demo)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server"
@@ -30,6 +31,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "dependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "luxon": "^3.3.0"
   }
 }
