@@ -1,8 +1,8 @@
-import { BookElement } from "./modules/BookELement.js";
-import { storeToLocalStorage, getFromLocalStorage } from "./modules/LocalStorage.js";
-const timeIndicator = document.querySelector(".timeIndicator");
-import { luxon } from "./modules/luxion.js";
+import BookElement from './modules/BookELement.js';
+import { storeToLocalStorage, getFromLocalStorage } from './modules/LocalStorage.js';
+import { luxon } from './node_modules/luxon/build/global/luxon.js';
 
+const timeIndicator = document.querySelector('.timeIndicator');
 
 const titleInput = document.querySelector('.title');
 const authorInput = document.querySelector('.author');
@@ -12,14 +12,14 @@ const navigationLinks = document.querySelectorAll('.nav-link');
 
 class Main extends BookElement {
   constructor() {
-    super()
+    super();
     this.listOfBooks = [];
   }
 
   removeElement = (id) => {
     this.listOfBooks = this.listOfBooks.filter((el) => el.id !== id);
     document.getElementById(id).remove();
-    storeToLocalStorage("books", this.listOfBooks);
+    storeToLocalStorage('books', this.listOfBooks);
   };
 
   printElements = () => {
@@ -39,7 +39,7 @@ class Main extends BookElement {
     this.printElements();
     titleInput.value = null;
     authorInput.value = null;
-    storeToLocalStorage("books", this.listOfBooks);
+    storeToLocalStorage('books', this.listOfBooks);
   };
 
   formSubmit = () => {
@@ -55,7 +55,7 @@ class Main extends BookElement {
 
   loadData = () => {
     window.addEventListener('load', async () => {
-      const getBooksFromLocalStorage = await getFromLocalStorage("books");
+      const getBooksFromLocalStorage = await getFromLocalStorage('books');
       console.log(getBooksFromLocalStorage);
       if (getBooksFromLocalStorage) {
         this.listOfBooks = getBooksFromLocalStorage;
@@ -63,7 +63,6 @@ class Main extends BookElement {
       }
     });
   }
-
 
   switchPages = (page) => {
     const findActivePage = document.querySelector('.opened');
@@ -73,21 +72,18 @@ class Main extends BookElement {
     newActivePage.classList.remove('hidden');
     newActivePage.classList.add('opened');
   }
-  getLocalTime = ()=> {
+
+  getLocalTime = () => {
     const time = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
     return time;
   }
-
 
   getTime = () => {
     setInterval(() => {
       timeIndicator.innerHTML = this.getLocalTime();
     }, 1000);
-
   }
-
 }
-
 
 const mainClass = new Main();
 mainClass.formSubmit();
