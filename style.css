@@ -167,10 +167,10 @@ body {
   display: flex;
   justify-content: end;
   padding: 20px 50px;
-  margin: auto; 
-  max-width: 800px; 
+  margin: auto;
+  max-width: 800px;
   position: relative;
   bottom: 10px;
   color: white;
   font-weight: bold;
-};
+}
