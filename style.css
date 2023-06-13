@@ -105,11 +105,11 @@ body {
   margin-top: 40px;
 }
 
-.inputs-col > :nth-child(1) {
+.inputs-col> :nth-child(1) {
   width: 70%;
 }
 
-.inputs-col > :nth-child(2) {
+.inputs-col> :nth-child(2) {
   width: 30%;
 }
 
@@ -173,4 +173,22 @@ body {
   bottom: 10px;
   color: white;
   font-weight: bold;
+}
+
+.main-footer {
+  width: 100%;
+  padding-top: 50px;
+  position: absolute;
+  bottom: 0px;
+  color: black;
+  height: 50px;
+  background-color: white;
+}
+
+.footer-container
+{
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+
 }
