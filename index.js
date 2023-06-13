@@ -1,6 +1,6 @@
 import BookElement from './modules/BookELement.js';
 import { storeToLocalStorage, getFromLocalStorage } from './modules/LocalStorage.js';
-import { luxon } from './node_modules/luxon/build/global/luxon.js';
+import { luxon } from './library/luxion.js';
 
 const timeIndicator = document.querySelector('.timeIndicator');
 
