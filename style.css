@@ -13,7 +13,7 @@ body {
 
 .main-header {
   background-color: white;
-  margin: 30px auto;
+  margin: 10px auto;
   max-width: 800px;
   display: flex;
   padding: 20px 50px;
@@ -161,4 +161,32 @@ body {
 
 .active {
   color: rgba(136, 90, 4, 0.874);
+}
+
+.time {
+  display: flex;
+  justify-content: end;
+  padding: 20px 50px;
+  margin: auto;
+  max-width: 800px;
+  position: relative;
+  bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.main-footer {
+  width: 100%;
+  padding-top: 50px;
+  position: absolute;
+  bottom: 0;
+  color: black;
+  height: 50px;
+  background-color: white;
+}
+
+.footer-container {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
 }

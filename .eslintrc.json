@@ -11,12 +11,15 @@
     },
     "extends": ["airbnb-base"],
     "rules": {
+      "react/jsx-filename-extension": [0],
+      "import/extensions": "off",
       "no-shadow": "off",
       "no-param-reassign": "off",
       "eol-last": "off"
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "library/"
     ]
   }
